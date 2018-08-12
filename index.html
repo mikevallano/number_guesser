@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <title>Number Guesser</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Number Guesser</h1>
+    <div id="main-container">
+      <div id="record-holder">
+        <span id="record">Record: </span>Wins: <span id="win-count">0</span> | Losses: <span id="loss-count">0</span>
+      </div>
+      <button id='new-game-btn'>Start New Game</button>
+    </div>
+    <div id="range-picker-container">
+      <p>Choose the min and max numbers for your guessing game</p>
+      <form id="range">
+        <input type="number" min="0" max="1000" step="1" placeholder="Pick a min" id="min-input">
+        <input type="number" min="0" step="1" placeholder="Pick a max" id="max-input">
+        <input type="submit" value="Submit" id="submit-min-max">
+      </form>
+    </div>
+    <div id="guess-game-container">
+      <p>Guess a number between <span class="min-num">1</span> and <span class="max-num">10</span></p>
+      <form id="game-form">
+        <input type="number" id="guess-input" min="1" step="1" autofocus required placeholder="Guess">
+        <input type="submit" value="Submit" id="guess-value">
+      </form>
+    </div>
+      <p class="message"></p>
+  </div>
+
+  <script src="app.js"></script>
+  <style>
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"] {
+      /*display: block;*/
+      width: 110px;
+      font-size: 16px;
+      text-align: center;
+    }
+    input[type="number"] {
+      font-size: 10px;
+      color: #d2a5a5;
+      font-weight: bold;
+    }
+    #record-holder {
+      margin-top: -2px;
+      font-size: 2em;
+    }
+    @keyframes scoreupdate {
+        from {color: black;}
+        to {color: #d0cbcb;}
+    }
+  </style>
+</body>
+</html>
